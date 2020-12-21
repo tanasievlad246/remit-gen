@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div>
+    <h1>Remittance generator for Highradius</h1>
+    
+    <form action="{{ url_for('process_info') }}" method='post'>
+        <div class="form-group"> 
+            <label for="payment">Payment ammount</label>
+            <input name="payment" type="text" placeholder="payment ammount" class="form-control" required/>
+        </div>
+        
+        <div class="form-group"> 
+            <label for="invoices">Invoices list</label>
+            <textarea name="invoices" placeholder="Paste all invoice here each on its own line" rows="20" cols="50" class="form-control" required ></textarea>
+        </div>
+        <input type="submit" value="Generate" class="btn btn-primary"/>  
+    </form>
+</div>
+
+{% endblock %}
